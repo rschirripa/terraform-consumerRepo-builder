@@ -9,14 +9,6 @@ data "template_file" "create" {
   }
 }
 
-data "template_file" "vcs" {
-  template = "${file("vcs_json.tmpl")}"
-  vars = {
-    reference_git_repo = "${var.reference_git_repo}"
-  }
-}
-
-
 data "template_file" "delete" {
   template = "${file("delete_repo.tmpl")}"
   vars = {
